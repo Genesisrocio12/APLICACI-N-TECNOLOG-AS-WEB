@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Nombre: GENESIS DEL ROCIO TITO FARINANGO -->
+<!-- Asignatura: APLICACIÓN TECNOLOGÍAS WEB NRC: 17707 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
