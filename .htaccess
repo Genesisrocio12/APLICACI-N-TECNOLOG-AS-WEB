@@ -1,6 +1,10 @@
+# Activar el motor de reescritura
 RewriteEngine On
 
-# Redirige todo el tráfico a router.php
+# Redirige todas las solicitudes a router.php si el archivo o directorio no existe
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Configura la regla de reescritura para manejar las rutas amigables
+# Captura el controlador, la acción y el ID de la URL
 RewriteRule ^([^/]+)(/([^/]*))?(/([0-9]+))?$ router.php?controller=$1&action=$3&id=$5 [QSA,L]
