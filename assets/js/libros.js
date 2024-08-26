@@ -6,7 +6,7 @@ const API_URL = 'https://api.ejemplo.com/libros';
 // Esta función se encarga de obtener la lista completa de libros desde la API.
 function obtenerLibros() {
   fetch(API_URL)
-    .then(response => response.json()) // Convierto la respuesta en formato JSON
+    .then(response => response.json()) // Convierto la respuesta en formato JSON.
     .then(data => {
       console.log('Libros obtenidos:', data);
       // Aquí puedo actualizar el DOM o realizar cualquier acción con los datos obtenidos.
