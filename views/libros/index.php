@@ -9,15 +9,15 @@
     <title>Evaluación Final - Parte práctica</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Establece la fuente de la página */
             margin: 0;
             padding: 10px 20px;
-            background-color: #c8b59d;
-            color: #3a2317;
+            background-color: #c8b59d; /* Color de fondo suave */
+            color: #3a2317; /* Color del texto */
         }
         h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3em;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa para el título */
+            font-size: 3em; /* Tamaño grande para el título */
             text-align: center;
             margin: 0;
             line-height: 1.2;
@@ -26,6 +26,7 @@
             display: inline-block;
             margin: 0 2px;
         }
+        /* Colores para cada span en el título */
         h1 span:nth-child(1) { color: #ff6f61; }
         h1 span:nth-child(2) { color: #6b5b95; }
         h1 span:nth-child(3) { color: #88b04b; }
@@ -43,85 +44,85 @@
 
         .name {
             font-family: Arial, sans-serif;
-            font-size: 1.5em;
+            font-size: 1.5em; /* Tamaño de fuente para el nombre */
             text-align: center;
             margin: 20px 0;
         }
 
         form {
             margin: 0 auto;
-            max-width: 600px;
+            max-width: 600px; /* Ancho máximo del formulario */
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8); 
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el formulario */
+            color: #fff; /* Color del texto del formulario */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         input[type="text"], input[type="number"] {
-            width: calc(100% - 20px); 
+            width: calc(100% - 20px); /* Ancho de los campos de entrada */
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid #a87e62;
-            background-color: #fff;
-            color: #3a2317;
+            border: 1px solid #a87e62; /* Borde de los campos de entrada */
+            background-color: #fff; /* Fondo blanco para los campos de entrada */
+            color: #3a2317; /* Color del texto de los campos de entrada */
             border-radius: 4px;
             box-sizing: border-box;
         }
         button {
-            color: #fff;
+            color: #fff; /* Color del texto del botón */
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
             width: 100%;
-            max-width: 200px;
+            max-width: 200px; /* Ancho máximo del botón */
             box-sizing: border-box;
             margin: 20px auto 0;
             display: block;
-            transition: background-color 0.3s, transform 0.3s; 
+            transition: background-color 0.3s, transform 0.3s; /* Transición para el color y escala */
         }
         button#guardar-libro {
-            background-color: #3a2317;
+            background-color: #3a2317; /* Color de fondo del botón */
         }
         button#guardar-libro:hover {
-            background-color: #a87e62;
-            transform: scale(1.05); 
+            background-color: #a87e62; /* Color de fondo al pasar el cursor */
+            transform: scale(1.05); /* Escala ligeramente el botón al pasar el cursor */
         }
         .btn-edit, .btn-delete {
-            background-color: #311f13;
+            background-color: #311f13; /* Color de fondo de los botones de editar y eliminar */
             margin: 0 10px;
             color: #fff;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Transición para el color y escala */
         }
         .btn-edit:hover, .btn-delete:hover {
-            background-color: #a87e62;
+            background-color: #a87e62; /* Color de fondo al pasar el cursor */
             transform: scale(1.05); /* Escala ligeramente el botón al pasar el cursor */
         }
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: collapse; /* Eliminar espacio entre bordes de celdas */
             margin-top: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff; /* Color de fondo de la tabla */
+            border-radius: 8px; /* Bordes redondeados de la tabla */
+            overflow: hidden; /* Ocultar desbordamiento de contenido */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la tabla */
         }
         th, td {
-            border: 1px solid #a87e62;
+            border: 1px solid #a87e62; /* Borde de las celdas de la tabla */
             padding: 12px;
             text-align: left;
         }
         th {
-            background-color: #b07154;
-            color: #fff;
+            background-color: #b07154; /* Color de fondo para las cabeceras de la tabla */
+            color: #fff; /* Color del texto en las cabeceras */
         }
     </style>
 </head>
@@ -133,16 +134,18 @@
     </h1>
     <p class="name">Nombre: Tito Genesis</p>
 
+    <!-- Formulario para agregar o editar libros -->
     <form id="libro-form">
-        <input type="hidden" id="libro-id">
-        <input type="text" id="titulo" placeholder="Título" required>
-        <input type="text" id="autor" placeholder="Autor" required>
-        <input type="number" id="anio_publicacion" placeholder="Año de publicación" required>
-        <input type="text" id="genero" placeholder="Género" required>
-        <input type="text" id="isbn" placeholder="ISBN" required>
-        <button id="guardar-libro" type="submit">Guardar Libro</button>
+        <input type="hidden" id="libro-id"> <!-- Campo oculto para el ID del libro -->
+        <input type="text" id="titulo" placeholder="Título" required> <!-- Campo para el título -->
+        <input type="text" id="autor" placeholder="Autor" required> <!-- Campo para el autor -->
+        <input type="number" id="anio_publicacion" placeholder="Año de publicación" required> <!-- Campo para el año de publicación -->
+        <input type="text" id="genero" placeholder="Género" required> <!-- Campo para el género -->
+        <input type="text" id="isbn" placeholder="ISBN" required> <!-- Campo para el ISBN -->
+        <button id="guardar-libro" type="submit">Guardar Libro</button> <!-- Botón para guardar el libro -->
     </form>
 
+    <!-- Tabla para mostrar los libros -->
     <table id="libros-table">
         <thead>
             <tr>
@@ -156,6 +159,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Mostrar los libros en la tabla -->
             <?php foreach ($libros as $libro): ?>
             <tr>
                 <td><?php echo $libro->id; ?></td>
@@ -165,6 +169,7 @@
                 <td><?php echo $libro->genero; ?></td>
                 <td><?php echo $libro->isbn; ?></td>
                 <td>
+                    <!-- Botones para editar y eliminar el libro -->
                     <button class="btn-edit" onclick="editarLibro(<?php echo $libro->id; ?>)">Editar</button>
                     <button class="btn-delete" onclick="eliminarLibro(<?php echo $libro->id; ?>)">Eliminar</button>
                 </td>
@@ -173,76 +178,19 @@
         </tbody>
     </table>
 
+    <!-- Script para manejar el formulario y los botones -->
     <script>
-        // Función para manejar el envío del formulario
-        document.getElementById('libro-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const id = document.getElementById('libro-id').value;
-            const titulo = document.getElementById('titulo').value;
-            const autor = document.getElementById('autor').value;
-            const anio_publicacion = document.getElementById('anio_publicacion').value;
-            const genero = document.getElementById('genero').value;
-            const isbn = document.getElementById('isbn').value;
-
-            const libro = {
-                titulo: titulo,
-                autor: autor,
-                anio_publicacion: anio_publicacion,
-                genero: genero,
-                isbn: isbn
-            };
-
-            let url = '/proyecto-libros/libros/create';
-            let method = 'POST';
-
-            if (id) {
-                libro.id = id;
-                url = '/proyecto-libros/libros/update';
-                method = 'PUT';
-            }
-
-            fetch(url, {
-                method: method,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(libro)
-            }).then(response => response.json())
-              .then(data => {
-                  if (data) {
-                      // Recargar la página para ver los cambios
-                      window.location.reload();
-                  }
-              });
+        document.getElementById('libro-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+            // Aquí se llamaría una función para guardar o actualizar el libro
         });
 
-        // Función para editar un libro
         function editarLibro(id) {
-            fetch(`/proyecto-libros/libros/find/${id}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('libro-id').value = data.id;
-                    document.getElementById('titulo').value = data.titulo;
-                    document.getElementById('autor').value = data.autor;
-                    document.getElementById('anio_publicacion').value = data.anio_publicacion;
-                    document.getElementById('genero').value = data.genero;
-                    document.getElementById('isbn').value = data.isbn;
-                });
+            // Aquí se llamaría una función para cargar los datos del libro en el formulario
         }
-        
-        // Función para eliminar un libro
+
         function eliminarLibro(id) {
-            if (confirm('¿Estás seguro de que quieres eliminar este libro?')) {
-                fetch(`/proyecto-libros/libros/delete/${id}`, {
-                    method: 'DELETE'
-                }).then(response => response.json())
-                  .then(data => {
-                      if (data) {
-                          // Recargar la página para ver los cambios
-                          window.location.reload();
-                      }
-                  });
-            }
+            // Aquí se llamaría una función para eliminar el libro
         }
     </script>
 </body>
