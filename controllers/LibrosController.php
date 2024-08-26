@@ -1,7 +1,7 @@
 <?php
 class LibrosController {
   
-  // Método para obtener y mostrar todos los libros
+  // Método para obtener y mostrar todos los libros.
   public function index()
   {
     // Recupero todos los registros de libros desde la base de datos
