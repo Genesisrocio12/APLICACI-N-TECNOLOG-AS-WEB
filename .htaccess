@@ -1,2 +1,6 @@
 RewriteEngine On
-RewriteRule ^([a-z]+)\/?([a-z]*)\/?([0-9]*)$ router.php?controller=$1&action=$2&id=$3
+
+# Redirige todo el tráfico a router.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)(/([^/]*))?(/([0-9]+))?$ router.php?controller=$1&action=$3&id=$5 [QSA,L]
